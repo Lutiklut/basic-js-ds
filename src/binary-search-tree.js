@@ -93,14 +93,15 @@ class BinarySearchTree {
     //   return null;
     // }
     while (node ){
-    if(!node) {return null;}
+    if(node.data) {
     if(node.data===data) {return node;}
     if(data < node.data){
       node=node.left
     }
-    else if(data>node.data){
+    else{
       node=node.right
-    }
+    }}
+    else{return null;}
   }
    
   }
