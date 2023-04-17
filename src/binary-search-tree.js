@@ -69,29 +69,22 @@ class BinarySearchTree {
       return false;
     }
 
- 
-    // if(newNode.data===data){return true;}
-    // else if(data<newNode.data&this.left){
-    //   return this.left.has(data)
-    // }
-    // else if(data>this.roots&this.right){
-    //   return this.right.has(data)
-    // }
-    // else{ return false}
+
   }
 
  find( data ) {
-   // throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-    var node = this.root();
+  const newNode=new Node(data)
+  var node = this.root();
+
   
     while (true) {
-      if (node === null) {
+      if (!node ) {
         return null;
       }
       if (data === node.data) {
         return node;
-      } else if (data < node.data) {
+      }
+      if (data < node.data) {
         node = node.left;
       } else {
         node = node.right;
@@ -101,14 +94,15 @@ class BinarySearchTree {
     }
 
  
-    // if(this.roots === null) {return null;}
-    // else if(data < this.roots.data && this.roots.left){
+    // if(!this.roots) {return null;}
+    // if(this.roots.data===data) {return this.roots;}
+    // if(data < this.roots.data){
     //   return this.roots.left.find(data);
     // }
     // else if(data>this.roots.data && this.roots.right){
     //   return this.roots.right.find(data)
     // }
-    // else{ return this.roots}
+   
   }
   
 
@@ -118,35 +112,29 @@ class BinarySearchTree {
   }
 
   min() {
-   // throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-
     var node = this.root();
-    if (node == null) {
+    if (!node) {
       return null;
     }
 
-    while (node.left !== null) {
+    while (node.left ) {
         node = node.left;
     }
-    return node.left.data;
+    return node.data;
   }
 
   max() {
     var node = this.root();
-    if (node == null) {
+    if (!node) {
       return null;
     }
-    while (node.right !== null) {
+    while (node.right) {
       node = node.right;
     }
-    return node.right.data;
+    return node.data;
   }
 }
 
 module.exports = {
   BinarySearchTree
 };
-
-
-console.log(BinarySearchTree)
